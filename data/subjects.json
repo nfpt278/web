@@ -1,0 +1,32 @@
+{
+  "subjects": [
+    {
+      "id": "stats",
+      "name": "Xác suất - Thống kê",
+      "description": "Khái niệm cốt lõi + ví dụ business",
+      "lessons": [
+        { "id": "prob-basics", "title": "Xác suất cơ bản", "tags": ["probability","basics"], "content": "## Ý tưởng\nXác suất là **mức độ tin tưởng** một sự kiện xảy ra.\n\n- Nếu đồng khả năng: `P(A)=thuận lợi/tổng`.\n\n> Ví dụ: tung đồng xu `P(ngửa)=1/2`." },
+        { "id": "random-variable", "title": "Random Variable", "tags": ["random variable"], "content": "## Random Variable\nLà hàm gán kết quả ngẫu nhiên → **con số**.\n\nVí dụ: X = số mặt ngửa khi tung 2 lần.\n\n### Tiếp theo\nPMF/PDF." },
+        { "id": "expectation", "title": "Expectation (Kỳ vọng)", "tags": ["mean","expected value"], "content": "## Kỳ vọng\nGiá trị trung bình dài hạn.\n\nDiscrete: `E[X]=Σ x·P(X=x)`.\n\nVí dụ xúc xắc: `E[X]=3.5`." }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English 101",
+      "description": "Từ vựng + mẫu câu tự nhiên",
+      "lessons": [
+        { "id": "daily-phrases", "title": "Daily phrases", "tags": ["speaking"], "content": "- \"I'm down for that.\" = Tui tham gia.\n- \"Give me a sec.\" = Chờ tui tí." },
+        { "id": "email-basics", "title": "Email work cơ bản", "tags": ["email"], "content": "## Template\nThank you for your email.\nI’ve attached the file as requested.\nPlease let me know if you have any questions." }
+      ]
+    },
+    {
+      "id": "it",
+      "name": "IT cơ bản",
+      "description": "Git/GitHub + web",
+      "lessons": [
+        { "id": "git-101", "title": "Git 101", "tags": ["git"], "content": "- `git add .`\n- `git commit -m \"msg\"`\n- `git push`" },
+        { "id": "github-pages", "title": "Deploy GitHub Pages", "tags": ["github","deploy"], "content": "Settings → Pages → Deploy from branch (main / root)." }
+      ]
+    }
+  ]
+}
