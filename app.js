@@ -57,8 +57,18 @@ function renderMarkdown(md) {
   html = html.replace(/^## (.*)$/gm, "<h2>$1</h2>");
   html = html.replace(/^> (.*)$/gm, "<blockquote>$1</blockquote>");
   html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
-  html = html.replace(/^\- (.*)$/gm, "<li>$1</li>");
-  html = html.replace(/(<li>[\s\S]*?<\/li>)/g, "<ul>$1</ul>");
+  // lists: gom các dòng bắt đầu bằng "- " thành 1 <ul> ... </ul>
+html = html.replace(/(?:^|\n)(- .*(?:\n- .*)*)/g, (m, block) => {
+  const items = block
+    .trim()
+    .split("\n")
+    .map(line => line.replace(/^- /, "").trim())
+    .filter(Boolean)
+    .map(text => `<li>${text}</li>`)
+    .join("");
+  return `\n<ul>${items}</ul>`;
+});
+
 
   html = html
     .split(/\n{2,}/)
@@ -316,3 +326,4 @@ init().catch(err => {
   console.error(err);
   els.lessonList.innerHTML = `<div class="muted" style="padding:10px">Error loading data.</div>`;
 });
+
